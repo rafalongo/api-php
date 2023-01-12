@@ -6,9 +6,9 @@
 
     class PlantsController
     {
-        public function get($id = null){
-            if($id){
-                return Plants::select($id);
+        public function get($growthId = null, $plantId = 0){
+            if($growthId){
+                return Plants::select($growthId, $plantId);
             } else {
                 return Plants::selectAll();
             }

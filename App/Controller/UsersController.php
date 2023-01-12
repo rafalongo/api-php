@@ -14,7 +14,14 @@
             }
         }
 
-        public function post(){}
+        public function post(){
+            $post = [];
+            $post['nome'] = $_POST['nome'];
+            $post['email'] = $_POST['email'];
+            $post['senha'] = md5($_POST['senha']);
+            
+            return Users::record($post);
+        }
 
         public function update(){}
 
